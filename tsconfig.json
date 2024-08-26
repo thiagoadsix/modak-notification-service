@@ -23,6 +23,23 @@
     "strictFunctionTypes": true, /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
     "noImplicitReturns": true, /* Enable error reporting for codepaths that do not explicitly return in a function. */
     "noFallthroughCasesInSwitch": true, /* Enable error reporting for fallthrough cases in switch statements. */
+    "alwaysStrict": true, /* Ensure 'use strict' is always emitted. */
+    "useUnknownInCatchVariables": true, /* Type catch clause variables as 'unknown' instead of 'any'. */
+    "strictPropertyInitialization": true, /* Enable strict checking of property initialization in classes. */
+    "noImplicitThis": true, /* Enable error reporting when 'this' is given the type 'any'. */
+    "strictBindCallApply": true, /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    "noPropertyAccessFromIndexSignature": true, /* Enforces using indexed accessors for keys declared using an indexed type */
+    "noUncheckedIndexedAccess": true, /* Disallow unchecked indexing into objects */
+    "exactOptionalPropertyTypes": true, /* Interpret optional property types as written, rather than adding 'undefined'. */
+    "noImplicitOverride": true, /* Ensure overriding members in derived classes are marked with an 'override' modifier. */
+    "noUnusedLocals": true, /* Enable error reporting when a local variables aren't read. */
+    "noUnusedParameters": true, /* Remove unused parameters in functions. */
+    "allowUnreachableCode": false, /* Disable error reporting for unreachable code. */
+    "allowUnusedLabels": false, /* Disable error reporting for unused labels. */
+    "noImplicitUseStrict": false, /* Enable error reporting for implicit 'use strict' directives. */
+    "suppressExcessPropertyErrors": false, /* Disable reporting of excess property errors during the creation of object literals. */
+    "suppressImplicitAnyIndexErrors": false, /* Disable error reporting for indexing objects lacking index signatures. */
+    "noStrictGenericChecks": false, /* Disable strict checking of generic signatures in function types. */
     /* Emit */
     "declaration": true, /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     "sourceMap": true, /* Create source map files for emitted JavaScript files. */
