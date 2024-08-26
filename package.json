@@ -1,0 +1,35 @@
+{
+  "name": "notification-service",
+  "version": "1.0.0",
+  "description": "A rate-limited notification service to manage email notifications based on user-defined rules.",
+  "author": {
+    "name": "Thiago Andrade Silva",
+    "email": "thiago.adsix@gmail.com",
+    "url": "https://www.thiagoadsix.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thiagoadsix/notification-service.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
+  },
+  "keywords": [
+    "notification",
+    "rate-limit",
+    "email",
+    "service",
+    "typescript"
+  ]
+}
