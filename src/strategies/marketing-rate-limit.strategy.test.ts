@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { MarketingRateLimitStrategy } from "./marketing-rate-limit-strategy";
+import { MarketingRateLimitStrategy } from "./marketing-rate-limit.strategy";
 
 describe("marketing rate limit strategy", () => {
   let sut: MarketingRateLimitStrategy;
