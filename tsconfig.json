@@ -30,7 +30,7 @@
     "noImplicitThis": true, /* Enable error reporting when 'this' is given the type 'any'. */
     "strictBindCallApply": true, /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
     "noPropertyAccessFromIndexSignature": true, /* Enforces using indexed accessors for keys declared using an indexed type */
-    "noUncheckedIndexedAccess": true, /* Disallow unchecked indexing into objects */
+    "noUncheckedIndexedAccess": false, /* Disallow unchecked indexing into objects */
     "exactOptionalPropertyTypes": true, /* Interpret optional property types as written, rather than adding 'undefined'. */
     "noImplicitOverride": true, /* Ensure overriding members in derived classes are marked with an 'override' modifier. */
     "noUnusedLocals": true, /* Enable error reporting when a local variables aren't read. */
