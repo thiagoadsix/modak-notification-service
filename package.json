@@ -16,7 +16,7 @@
     "node": ">=20.10.0"
   },
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/src/index.js",
     "build": "rimraf dist && tsc -p tsconfig.json",
     "test": "vitest --silent",
     "test:cov": "vitest run --silent --coverage"
@@ -37,6 +37,6 @@
     "typescript"
   ],
   "_moduleAliases": {
-    "@": "dist"
+    "@": "dist/src"
   }
 }
