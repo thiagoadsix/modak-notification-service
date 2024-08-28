@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { RateLimitAbstract } from "./rate-limit.abstract";
+
+import { RateLimitAbstract } from "@/strategies/rate-limit.abstract";
 
 class MockRateLimitStrategy extends RateLimitAbstract {
   protected limit = 2;

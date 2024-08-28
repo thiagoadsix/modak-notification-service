@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { NewsRateLimitStrategy } from "./news-rate-limit.strategy";
+
+import { NewsRateLimitStrategy } from "@/strategies/implementations/news-rate-limit.strategy";
 
 describe("news rate limit strategy", () => {
   let sut: NewsRateLimitStrategy;

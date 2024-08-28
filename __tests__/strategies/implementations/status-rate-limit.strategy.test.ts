@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { StatusRateLimitStrategy } from "./status-rate-limit.strategy";
+
+import { StatusRateLimitStrategy } from "@/strategies/implementations/status-rate-limit.strategy";
 
 describe("status rate limit strategy", () => {
   let sut: StatusRateLimitStrategy;

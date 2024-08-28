@@ -6,7 +6,7 @@ import { MarketingRateLimitStrategy } from "@/strategies/implementations/marketi
 
 import { NotificationGateway } from "@/gateways/notification.gateway";
 
-import { NotificationServiceImpl } from "./notification-service.impl";
+import { NotificationServiceImpl } from "@/services/notification-service.impl";
 
 describe("NotificationServiceImpl", () => {
   let gateway: NotificationGateway;

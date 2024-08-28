@@ -1,5 +1,6 @@
 import { expect, it, describe, vi } from "vitest";
-import { NotificationGateway } from "./notification.gateway";
+
+import { NotificationGateway } from "@/gateways/notification.gateway";
 
 describe("notification gateway", () => {
   const sut: NotificationGateway = new NotificationGateway();
