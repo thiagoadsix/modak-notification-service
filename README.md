@@ -122,6 +122,46 @@ To run tests and check code coverage, you can use Vitest. Follow the steps below
    npm run coverage
    ```
 
+## Test Coverage
+
+This project has been thoroughly tested to ensure robust functionality across all components. Below is a summary of the current test coverage:
+
+```bash
+ ✓ src/gateways/notification.gateway.test.ts (1)
+ ✓ src/services/notification-service.impl.test.ts (3)
+ ✓ src/strategies/marketing-rate-limit.strategy.test.ts (2)
+ ✓ src/strategies/news-rate-limit.strategy.test.ts (2)
+ ✓ src/strategies/rate-limit.abstract.test.ts (4)
+ ✓ src/strategies/status-rate-limit.strategy.test.ts (2)
+
+ Test Files  6 passed (6)
+      Tests  14 passed (14)
+   Start at  21:24:53
+   Duration  325ms (transform 129ms, setup 0ms, collect 197ms, tests 19ms, environment 1ms, prepare 346ms)
+
+ % Coverage report from v8
+----------------------------------------|---------|----------|---------|---------|-------------------
+File                                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Lines
+----------------------------------------|---------|----------|---------|---------|-------------------
+All files                               |     100 |      100 |     100 |     100 |
+ gateways                               |     100 |      100 |     100 |     100 |
+  notification.gateway.test.ts          |     100 |      100 |     100 |     100 |
+  notification.gateway.ts               |     100 |      100 |     100 |     100 |
+ services                               |     100 |      100 |     100 |     100 |
+  notification-service.impl.test.ts     |     100 |      100 |     100 |     100 |
+  notification-service.impl.ts          |     100 |      100 |     100 |     100 |
+ strategies                             |     100 |      100 |     100 |     100 |
+  marketing-rate-limit.strategy.test.ts |     100 |      100 |     100 |     100 |
+  marketing-rate-limit.strategy.ts      |     100 |      100 |     100 |     100 |
+  news-rate-limit.strategy.test.ts      |     100 |      100 |     100 |     100 |
+  news-rate-limit.strategy.ts           |     100 |      100 |     100 |     100 |
+  rate-limit.abstract.test.ts           |     100 |      100 |     100 |     100 |
+  rate-limit.abstract.ts                |     100 |      100 |     100 |     100 |
+  status-rate-limit.strategy.test.ts    |     100 |      100 |     100 |     100 |
+  status-rate-limit.strategy.ts         |     100 |      100 |     100 |     100 |
+----------------------------------------|---------|----------|---------|---------|-------------------
+```
+
 ## Conclusion
 
 This project demonstrates a robust implementation of a notification service with configurable rate limits for different types of messages. With a modular architecture and comprehensive tests, it ensures the flexibility and reliability needed to prevent abuse and provide a good user experience.
