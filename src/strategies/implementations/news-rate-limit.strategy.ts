@@ -1,4 +1,4 @@
-import { RateLimitAbstract } from "./rate-limit.abstract";
+import { RateLimitAbstract } from "../rate-limit.abstract";
 
 export class NewsRateLimitStrategy extends RateLimitAbstract {
   protected limit = 1;
