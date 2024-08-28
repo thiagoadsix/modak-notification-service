@@ -7,13 +7,15 @@ export abstract class RateLimitAbstract {
   isAllowed(userId: string): boolean {
     const currentTime = Date.now();
     const timestamps = this.requests.get(userId) || [];
+    const windowStart = currentTime - this.windowTime;
+    const timestampsInsideLimitInterval = timestamps.filter(
+      (time) => time > windowStart
+    );
 
-    this.cleanOldRequests(timestamps, currentTime);
-
-    return timestamps.length < this.limit;
+    return timestampsInsideLimitInterval.length < this.limit;
   }
 
-  logRequest(userId: string): void {
+  registerRequest(userId: string): void {
     const currentTime = Date.now();
 
     if (!this.requests.has(userId)) {
@@ -21,13 +23,5 @@ export abstract class RateLimitAbstract {
     }
 
     this.requests.get(userId)?.push(currentTime);
-  }
-
-  private cleanOldRequests(timestamps: number[], currentTime: number): void {
-    const windowStart = currentTime - this.windowTime;
-
-    while (timestamps.length > 0 && timestamps[0] < windowStart) {
-      timestamps.shift();
-    }
   }
 }
