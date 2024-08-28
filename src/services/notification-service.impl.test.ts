@@ -1,9 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { NotificationGateway } from "../gateways/notification.gateway";
+
+import { StatusRateLimitStrategy } from "@/strategies/implementations/status-rate-limit.strategy";
+import { NewsRateLimitStrategy } from "@/strategies/implementations/news-rate-limit.strategy";
+import { MarketingRateLimitStrategy } from "@/strategies/implementations/marketing-rate-limit.strategy";
+
+import { NotificationGateway } from "@/gateways/notification.gateway";
+
 import { NotificationServiceImpl } from "./notification-service.impl";
-import { StatusRateLimitStrategy } from "../strategies/implementations/status-rate-limit.strategy";
-import { NewsRateLimitStrategy } from "../strategies/implementations/news-rate-limit.strategy";
-import { MarketingRateLimitStrategy } from "../strategies/implementations/marketing-rate-limit.strategy";
 
 describe("NotificationServiceImpl", () => {
   let gateway: NotificationGateway;

@@ -1,8 +1,10 @@
-import { NotificationGateway } from "../gateways/notification.gateway";
-import { MarketingRateLimitStrategy } from "../strategies/implementations/marketing-rate-limit.strategy";
-import { NewsRateLimitStrategy } from "../strategies/implementations/news-rate-limit.strategy";
-import { StatusRateLimitStrategy } from "../strategies/implementations/status-rate-limit.strategy";
-import { RateLimitAbstract } from "../strategies/rate-limit.abstract";
+import { MarketingRateLimitStrategy } from "@/strategies/implementations/marketing-rate-limit.strategy";
+import { NewsRateLimitStrategy } from "@/strategies/implementations/news-rate-limit.strategy";
+import { StatusRateLimitStrategy } from "@/strategies/implementations/status-rate-limit.strategy";
+import { RateLimitAbstract } from "@/strategies/rate-limit.abstract";
+
+import { NotificationGateway } from "@/gateways/notification.gateway";
+
 import { NotificationService } from "./notification-service.interface";
 
 export class NotificationServiceImpl implements NotificationService {

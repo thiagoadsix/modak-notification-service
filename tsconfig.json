@@ -47,7 +47,13 @@
     "removeComments": true, /* Disable emitting comments. */
     "noEmitOnError": true, /* Disable emitting files if any type checking errors are reported. */
     /* Completeness */
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "baseUrl": "src", /* Specify the base directory to resolve non-relative module names. */
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    } /* Specify path mapping to be computed relative to baseUrl option. */
   },
   "include": [
     "src/**/*"

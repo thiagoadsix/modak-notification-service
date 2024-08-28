@@ -17,13 +17,16 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "build": "tsc",
+    "build": "rimraf dist && tsc -p tsconfig.json",
     "test": "vitest --silent",
     "test:cov": "vitest run --silent --coverage"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^2.0.5",
+    "module-alias": "^2.2.3",
+    "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^2.0.5"
   },
   "keywords": [
@@ -32,5 +35,8 @@
     "email",
     "service",
     "typescript"
-  ]
+  ],
+  "_moduleAliases": {
+    "@": "dist"
+  }
 }

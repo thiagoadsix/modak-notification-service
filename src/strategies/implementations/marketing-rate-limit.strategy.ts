@@ -1,4 +1,4 @@
-import { RateLimitAbstract } from "../rate-limit.abstract";
+import { RateLimitAbstract } from "@/strategies/rate-limit.abstract";
 
 export class MarketingRateLimitStrategy extends RateLimitAbstract {
   protected limit = 3;
