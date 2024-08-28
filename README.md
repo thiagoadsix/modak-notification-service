@@ -36,7 +36,6 @@ The full details of the technical challenge are documented in the [challenge.md]
 
 #### Files:
 - **notification.gateway.ts**
-- **notification.gateway.test.ts**
 
 #### Description:
 The `NotificationGateway` is responsible for sending notification messages to recipients. It abstracts the specific implementation of sending, allowing the notification service to use different sending mechanisms without modifying the core code.
@@ -52,7 +51,6 @@ The `NotificationGateway` is responsible for sending notification messages to re
 
 #### Files:
 - **notification-service.impl.ts**
-- **notification-service.impl.test.ts**
 - **notification-service.interface.ts**
 
 #### Description:
@@ -70,13 +68,9 @@ The `NotificationServiceImpl` is the core of the system, managing the sending of
 
 #### Files:
 - **rate-limit.abstract.ts**
-- **rate-limit.abstract.test.ts**
 - **marketing-rate-limit.strategy.ts**
-- **marketing-rate-limit.strategy.test.ts**
 - **news-rate-limit.strategy.ts**
-- **news-rate-limit.strategy.test.ts**
 - **status-rate-limit.strategy.ts**
-- **status-rate-limit.strategy.test.ts**
 
 #### Description:
 Rate limit strategies (`RateLimitStrategy`) are responsible for defining and enforcing rate limit rules for different types of notifications. The `RateLimitAbstract` class serves as a base for specific strategies, implementing common logic for checking and logging requests.
@@ -128,40 +122,34 @@ To run tests and check code coverage, you can use Vitest. Follow the steps below
 This project has been thoroughly tested to ensure robust functionality across all components. Below is a summary of the current test coverage:
 
 ```bash
- ✓ src/gateways/notification.gateway.test.ts (1)
- ✓ src/services/notification-service.impl.test.ts (3)
- ✓ src/strategies/implementations/marketing-rate-limit.strategy.test.ts (2)
- ✓ src/strategies/implementations/news-rate-limit.strategy.test.ts (2)
- ✓ src/strategies/implementations/rate-limit.abstract.test.ts (4)
- ✓ src/strategies/implementations/status-rate-limit.strategy.test.ts (2)
+ ✓ __tests__/gateways/notification.gateway.test.ts (1)
+ ✓ __tests__/services/notification-service.impl.test.ts (3)
+ ✓ __tests__/strategies/rate-limit.abstract.test.ts (4)
+ ✓ __tests__/strategies/implementations/marketing-rate-limit.strategy.test.ts (2)
+ ✓ __tests__/strategies/implementations/news-rate-limit.strategy.test.ts (2)
+ ✓ __tests__/strategies/implementations/status-rate-limit.strategy.test.ts (2)
 
  Test Files  6 passed (6)
       Tests  14 passed (14)
-   Start at  21:24:53
-   Duration  325ms (transform 129ms, setup 0ms, collect 197ms, tests 19ms, environment 1ms, prepare 346ms)
+   Start at  23:20:34
+   Duration  370ms (transform 176ms, setup 0ms, collect 223ms, tests 18ms, environment 1ms, prepare 497ms)
 
  % Coverage report from v8
-----------------------------------------|---------|----------|---------|---------|-------------------
-File                                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Lines
-----------------------------------------|---------|----------|---------|---------|-------------------
-All files                               |     100 |      100 |     100 |     100 |
- gateways                               |     100 |      100 |     100 |     100 |
-  notification.gateway.test.ts          |     100 |      100 |     100 |     100 |
-  notification.gateway.ts               |     100 |      100 |     100 |     100 |
- services                               |     100 |      100 |     100 |     100 |
-  notification-service.impl.test.ts     |     100 |      100 |     100 |     100 |
-  notification-service.impl.ts          |     100 |      100 |     100 |     100 |
- strategies                             |     100 |      100 |     100 |     100 |
-  rate-limit.abstract.test.ts           |     100 |      100 |     100 |     100 |
-  rate-limit.abstract.ts                |     100 |      100 |     100 |     100 |
-strategies/implementations              |     100 |      100 |     100 |     100 |
-  marketing-rate-limit.strategy.test.ts |     100 |      100 |     100 |     100 |
-  marketing-rate-limit.strategy.ts      |     100 |      100 |     100 |     100 |
-  news-rate-limit.strategy.test.ts      |     100 |      100 |     100 |     100 |
-  news-rate-limit.strategy.ts           |     100 |      100 |     100 |     100 |
-  status-rate-limit.strategy.test.ts    |     100 |      100 |     100 |     100 |
-  status-rate-limit.strategy.ts         |     100 |      100 |     100 |     100 |
-----------------------------------------|---------|----------|---------|---------|-------------------
+-----------------------------------|---------|----------|---------|---------|-------------------
+File                               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Lines
+-----------------------------------|---------|----------|---------|---------|-------------------
+All files                          |     100 |      100 |     100 |     100 |
+ gateways                          |     100 |      100 |     100 |     100 |
+  notification.gateway.ts          |     100 |      100 |     100 |     100 |
+ services                          |     100 |      100 |     100 |     100 |
+  notification-service.impl.ts     |     100 |      100 |     100 |     100 |
+ strategies                        |     100 |      100 |     100 |     100 |
+  rate-limit.abstract.ts           |     100 |      100 |     100 |     100 |
+ strategies/implementations        |     100 |      100 |     100 |     100 |
+  marketing-rate-limit.strategy.ts |     100 |      100 |     100 |     100 |
+  news-rate-limit.strategy.ts      |     100 |      100 |     100 |     100 |
+  status-rate-limit.strategy.ts    |     100 |      100 |     100 |     100 |
+-----------------------------------|---------|----------|---------|---------|-------------------
 ```
 
 ## Conclusion
