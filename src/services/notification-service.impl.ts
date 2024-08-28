@@ -33,7 +33,7 @@ export class NotificationServiceImpl implements NotificationService {
     this.gateway.send(userId, message);
 
     if (strategy) {
-      strategy.logRequest(userId);
+      strategy.registerRequest(userId);
     }
   }
 }

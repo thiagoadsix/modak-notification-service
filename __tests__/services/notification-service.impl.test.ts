@@ -21,7 +21,7 @@ describe("NotificationServiceImpl", () => {
     vi.spyOn(StatusRateLimitStrategy.prototype, "isAllowed").mockReturnValue(
       true
     );
-    vi.spyOn(StatusRateLimitStrategy.prototype, "logRequest");
+    vi.spyOn(StatusRateLimitStrategy.prototype, "registerRequest");
 
     service.send("status", "user1", "This is a status update");
 
@@ -32,9 +32,9 @@ describe("NotificationServiceImpl", () => {
     expect(StatusRateLimitStrategy.prototype.isAllowed).toHaveBeenCalledWith(
       "user1"
     );
-    expect(StatusRateLimitStrategy.prototype.logRequest).toHaveBeenCalledWith(
-      "user1"
-    );
+    expect(
+      StatusRateLimitStrategy.prototype.registerRequest
+    ).toHaveBeenCalledWith("user1");
   });
 
   it("should not send a notification when rate limit is exceeded", () => {

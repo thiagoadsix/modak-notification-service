@@ -21,17 +21,17 @@ describe("rate limit abstract", () => {
 
   it("should allow requests under the limit", () => {
     expect(sut.isAllowed("user1")).toBe(true);
-    sut.logRequest("user1");
+    sut.registerRequest("user1");
 
     expect(sut.isAllowed("user1")).toBe(true);
-    sut.logRequest("user1");
+    sut.registerRequest("user1");
 
     expect(sut.isAllowed("user1")).toBe(false);
   });
 
   it("should reject requests over the limit", () => {
-    sut.logRequest("user1");
-    sut.logRequest("user1");
+    sut.registerRequest("user1");
+    sut.registerRequest("user1");
 
     expect(sut.isAllowed("user1")).toBe(false);
   });
@@ -41,8 +41,8 @@ describe("rate limit abstract", () => {
     const initialTime = Date.now();
     vi.setSystemTime(initialTime);
 
-    sut.logRequest("user1");
-    sut.logRequest("user1");
+    sut.registerRequest("user1");
+    sut.registerRequest("user1");
 
     expect(sut.isAllowed("user1")).toBe(false);
 
@@ -56,13 +56,13 @@ describe("rate limit abstract", () => {
   });
 
   it("should correctly handle multiple users", () => {
-    sut.logRequest("user1");
-    sut.logRequest("user2");
+    sut.registerRequest("user1");
+    sut.registerRequest("user2");
     expect(sut.isAllowed("user1")).toBe(true);
     expect(sut.isAllowed("user2")).toBe(true);
 
-    sut.logRequest("user1");
-    sut.logRequest("user2");
+    sut.registerRequest("user1");
+    sut.registerRequest("user2");
     expect(sut.isAllowed("user1")).toBe(false);
     expect(sut.isAllowed("user2")).toBe(false);
   });
