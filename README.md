@@ -18,14 +18,15 @@ The full details of the technical challenge are documented in the [challenge.md]
 │   │   ├── notification-service.impl.ts
 │   │   └── notification-service.interface.ts
 │   └── strategies
-│       ├── marketing-rate-limit.strategy.test.ts
-│       ├── marketing-rate-limit.strategy.ts
-│       ├── news-rate-limit.strategy.test.ts
-│       ├── news-rate-limit.strategy.ts
+│       ├── implementations
+│       │   ├── marketing-rate-limit.strategy.test.ts
+│       │   ├── marketing-rate-limit.strategy.ts
+│       │   ├── news-rate-limit.strategy.test.ts
+│       │   ├── news-rate-limit.strategy.ts
+│       │   ├── status-rate-limit.strategy.test.ts
+│       │   └── status-rate-limit.strategy.ts
 │       ├── rate-limit.abstract.test.ts
-│       ├── rate-limit.abstract.ts
-│       ├── status-rate-limit.strategy.test.ts
-│       └── status-rate-limit.strategy.ts
+│       └── rate-limit.abstract.ts
 │── index.ts
 ```
 
@@ -129,10 +130,10 @@ This project has been thoroughly tested to ensure robust functionality across al
 ```bash
  ✓ src/gateways/notification.gateway.test.ts (1)
  ✓ src/services/notification-service.impl.test.ts (3)
- ✓ src/strategies/marketing-rate-limit.strategy.test.ts (2)
- ✓ src/strategies/news-rate-limit.strategy.test.ts (2)
- ✓ src/strategies/rate-limit.abstract.test.ts (4)
- ✓ src/strategies/status-rate-limit.strategy.test.ts (2)
+ ✓ src/strategies/implementations/marketing-rate-limit.strategy.test.ts (2)
+ ✓ src/strategies/implementations/news-rate-limit.strategy.test.ts (2)
+ ✓ src/strategies/implementations/rate-limit.abstract.test.ts (4)
+ ✓ src/strategies/implementations/status-rate-limit.strategy.test.ts (2)
 
  Test Files  6 passed (6)
       Tests  14 passed (14)
@@ -151,12 +152,13 @@ All files                               |     100 |      100 |     100 |     100
   notification-service.impl.test.ts     |     100 |      100 |     100 |     100 |
   notification-service.impl.ts          |     100 |      100 |     100 |     100 |
  strategies                             |     100 |      100 |     100 |     100 |
+  rate-limit.abstract.test.ts           |     100 |      100 |     100 |     100 |
+  rate-limit.abstract.ts                |     100 |      100 |     100 |     100 |
+strategies/implementations              |     100 |      100 |     100 |     100 |
   marketing-rate-limit.strategy.test.ts |     100 |      100 |     100 |     100 |
   marketing-rate-limit.strategy.ts      |     100 |      100 |     100 |     100 |
   news-rate-limit.strategy.test.ts      |     100 |      100 |     100 |     100 |
   news-rate-limit.strategy.ts           |     100 |      100 |     100 |     100 |
-  rate-limit.abstract.test.ts           |     100 |      100 |     100 |     100 |
-  rate-limit.abstract.ts                |     100 |      100 |     100 |     100 |
   status-rate-limit.strategy.test.ts    |     100 |      100 |     100 |     100 |
   status-rate-limit.strategy.ts         |     100 |      100 |     100 |     100 |
 ----------------------------------------|---------|----------|---------|---------|-------------------
