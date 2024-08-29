@@ -69,4 +69,17 @@ describe("NotificationServiceImpl", () => {
     expect(newsSpy).toHaveBeenCalled();
     expect(marketingSpy).toHaveBeenCalled();
   });
+
+  it("should not send a notification when the strategy does not exist", () => {
+    const consoleSpy = vi.spyOn(console, "log");
+
+    service.send("unknown", "user1", "Unknown type message");
+
+    expect(gateway.send).not.toHaveBeenCalled();
+    expect(consoleSpy).toHaveBeenCalledWith(
+      "Strategy not found for type unknown"
+    );
+
+    consoleSpy.mockRestore();
+  });
 });

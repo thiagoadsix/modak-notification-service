@@ -23,6 +23,11 @@ export class NotificationServiceImpl implements NotificationService {
   send(type: string, userId: string, message: string): void {
     const strategy = this.strategies[type];
 
+    if (!strategy) {
+      console.log(`Strategy not found for type ${type}`);
+      return;
+    }
+
     if (strategy) {
       strategy.registerRequest(userId);
 

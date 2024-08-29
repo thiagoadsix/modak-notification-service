@@ -1,10 +1,11 @@
 # Notification Service
 
+![alt text](./docs/images/notification-service-rate-limite.png)
 This project implements a notification service that applies rate limiting for different types of notifications, such as status updates, news, and marketing. The system is modular, with specific strategies for each type of notification, a gateway for sending messages, and a service that manages these operations.
 
 ## Challenge
 
-The full details of the technical challenge are documented in the [challenge.md](./challenge.md) file. This document outlines the requirements, expectations, and evaluation criteria for the challenge. Be sure to read the `challenge.md` to understand the scope of the project and the design decisions made during the implementation.
+The full details of the technical challenge are documented in the [challenge.md](./docs/challenge.md) file. This document outlines the requirements, expectations, and evaluation criteria for the challenge. Be sure to read the `challenge.md` to understand the scope of the project and the design decisions made during the implementation.
 
 ## Project Structure
 
