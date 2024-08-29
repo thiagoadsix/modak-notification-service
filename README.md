@@ -113,19 +113,35 @@ The `index.ts` file serves as the main entry point for the application. It initi
 
 To run tests and check code coverage, you can use Vitest. Follow the steps below:
 
-1. **Install Dependencies**:
+
+1. **Setup Node.js correct version**:
+   ```bash
+   nvm use
+   ```
+
+2. **Install Dependencies**:
    ```bash
    npm install
    ```
 
-2. **Run Tests**:
+3. **Run Tests**:
    ```bash
    npm run test
    ```
 
-3. **Generate Coverage Report**:
+4. **Generate Coverage Report**:
    ```bash
-   npm run coverage
+   npm run test:cov
+   ```
+
+5. **Build application**:
+   ```bash
+   npm run build
+   ```
+
+6. **Run application**:
+   ```bash
+   npm run start
    ```
 
 ## Test Coverage
