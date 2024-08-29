@@ -6,9 +6,8 @@ export abstract class RateLimitAbstract {
 
   isAllowed(userId: string): boolean {
     const timestamps = this.requests.get(userId) || [];
-    this.cleanOldRequests(userId, timestamps);
-
-    return timestamps.length <= this.limit;
+    const requestsUpdated = this.cleanOldRequests(userId, timestamps);
+    return requestsUpdated.length <= this.limit;
   }
 
   registerRequest(userId: string): void {
@@ -18,15 +17,20 @@ export abstract class RateLimitAbstract {
       this.requests.set(userId, []);
     }
 
-    this.requests.get(userId)?.push(currentTime);
+    const timestamps = this.requests.get(userId);
+    timestamps?.push(currentTime);
   }
 
-  private cleanOldRequests(userId: string, timestamps: number[]): void {
-    if (timestamps.length === 0) return;
+  private cleanOldRequests(userId: string, timestamps: number[]): number[] {
+    if (timestamps.length === 0) return [];
 
-    const windowStart = timestamps[timestamps.length - 1] - this.windowTime;
+    const lastTimestamp = timestamps[timestamps.length - 1];
+    const windowStart = lastTimestamp - this.windowTime;
 
     const filteredTimestamps = timestamps.filter((time) => time >= windowStart);
+
     this.requests.set(userId, filteredTimestamps);
+
+    return filteredTimestamps;
   }
 }
