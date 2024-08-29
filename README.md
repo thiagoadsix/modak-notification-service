@@ -109,9 +109,9 @@ The `index.ts` file serves as the main entry point for the application. It initi
 
 ---
 
-## How to Run Tests
+## How to run tests and run the code
 
-To run tests and check code coverage, you can use Vitest. Follow the steps below:
+Follow the steps below:
 
 #### Note
 If `nvm` isn't installed on your machine, you can easily set it up by following [this tutorial](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script). It's a simple process. However, if you'd prefer not to install `nvm`, you can remove the `package-lock.json` file and install the packages directly. Please note, I recommend using at least Node.js version 20.10.0 or higher for optimal compatibility.
