@@ -5,14 +5,10 @@ export abstract class RateLimitAbstract {
   protected abstract windowTime: number;
 
   isAllowed(userId: string): boolean {
-    const currentTime = Date.now();
     const timestamps = this.requests.get(userId) || [];
-    const windowStart = currentTime - this.windowTime;
-    const timestampsInsideLimitInterval = timestamps.filter(
-      (time) => time > windowStart
-    );
+    this.cleanOldRequests(userId, timestamps);
 
-    return timestampsInsideLimitInterval.length < this.limit;
+    return timestamps.length <= this.limit;
   }
 
   registerRequest(userId: string): void {
@@ -23,5 +19,14 @@ export abstract class RateLimitAbstract {
     }
 
     this.requests.get(userId)?.push(currentTime);
+  }
+
+  private cleanOldRequests(userId: string, timestamps: number[]): void {
+    if (timestamps.length === 0) return;
+
+    const windowStart = timestamps[timestamps.length - 1] - this.windowTime;
+
+    const filteredTimestamps = timestamps.filter((time) => time >= windowStart);
+    this.requests.set(userId, filteredTimestamps);
   }
 }

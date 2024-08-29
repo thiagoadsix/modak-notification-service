@@ -15,9 +15,12 @@ describe("marketing rate limit strategy", () => {
   });
 
   it("should allow up to 3 requests within 1 hour", () => {
-    expect(sut.isAllowed("user1")).toBe(true);
     sut.registerRequest("user1");
     expect(sut.isAllowed("user1")).toBe(true);
+
+    sut.registerRequest("user1");
+    expect(sut.isAllowed("user1")).toBe(true);
+
     sut.registerRequest("user1");
     expect(sut.isAllowed("user1")).toBe(true);
 
@@ -29,9 +32,12 @@ describe("marketing rate limit strategy", () => {
     sut.registerRequest("user1");
     sut.registerRequest("user1");
     sut.registerRequest("user1");
+    sut.registerRequest("user1");
     expect(sut.isAllowed("user1")).toBe(false);
 
     vi.advanceTimersByTime(60 * 60 * 1000 + 1000);
+
+    sut.registerRequest("user1");
     expect(sut.isAllowed("user1")).toBe(true);
   });
 });

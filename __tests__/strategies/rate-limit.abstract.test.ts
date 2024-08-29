@@ -20,16 +20,18 @@ describe("rate limit abstract", () => {
   });
 
   it("should allow requests under the limit", () => {
-    expect(sut.isAllowed("user1")).toBe(true);
     sut.registerRequest("user1");
-
     expect(sut.isAllowed("user1")).toBe(true);
-    sut.registerRequest("user1");
 
+    sut.registerRequest("user1");
+    expect(sut.isAllowed("user1")).toBe(true);
+
+    sut.registerRequest("user1");
     expect(sut.isAllowed("user1")).toBe(false);
   });
 
   it("should reject requests over the limit", () => {
+    sut.registerRequest("user1");
     sut.registerRequest("user1");
     sut.registerRequest("user1");
 
@@ -37,19 +39,18 @@ describe("rate limit abstract", () => {
   });
 
   it("should reset limit after window time has passed", () => {
-    vi.useFakeTimers();
     const initialTime = Date.now();
     vi.setSystemTime(initialTime);
 
     sut.registerRequest("user1");
     sut.registerRequest("user1");
+    sut.registerRequest("user1");
 
     expect(sut.isAllowed("user1")).toBe(false);
 
-    vi.advanceTimersByTime(30 * 1000);
-    expect(sut.isAllowed("user1")).toBe(false);
+    vi.advanceTimersByTime(61 * 1000);
 
-    vi.advanceTimersByTime(31 * 1000);
+    sut.registerRequest("user1");
     expect(sut.isAllowed("user1")).toBe(true);
 
     vi.useRealTimers();
@@ -60,6 +61,9 @@ describe("rate limit abstract", () => {
     sut.registerRequest("user2");
     expect(sut.isAllowed("user1")).toBe(true);
     expect(sut.isAllowed("user2")).toBe(true);
+
+    sut.registerRequest("user1");
+    sut.registerRequest("user2");
 
     sut.registerRequest("user1");
     sut.registerRequest("user2");

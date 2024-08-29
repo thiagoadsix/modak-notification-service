@@ -23,17 +23,17 @@ export class NotificationServiceImpl implements NotificationService {
   send(type: string, userId: string, message: string): void {
     const strategy = this.strategies[type];
 
-    if (strategy && !strategy.isAllowed(userId)) {
-      console.log(
-        `Request rejected: Rate limit exceeded for ${type} for user ${userId}`
-      );
-      return;
+    if (strategy) {
+      strategy.registerRequest(userId);
+
+      if (!strategy.isAllowed(userId)) {
+        console.log(
+          `Request rejected: Rate limit exceeded for ${type} for user ${userId} for message "${message}"`
+        );
+        return;
+      }
     }
 
     this.gateway.send(userId, message);
-
-    if (strategy) {
-      strategy.registerRequest(userId);
-    }
   }
 }
