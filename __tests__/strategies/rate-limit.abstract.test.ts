@@ -70,4 +70,15 @@ describe("rate limit abstract", () => {
     expect(sut.isAllowed("user1")).toBe(false);
     expect(sut.isAllowed("user2")).toBe(false);
   });
+
+  it("should initialize timestamps array for a new userId", () => {
+    expect(sut.isAllowed("newUser")).toBe(true);
+
+    sut.registerRequest("newUser");
+    expect(sut.isAllowed("newUser")).toBe(true);
+
+    const timestamps = sut["requests"].get("newUser");
+    expect(timestamps).toBeDefined();
+    expect(timestamps?.length).toBe(1);
+  });
 });

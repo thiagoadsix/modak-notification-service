@@ -9,6 +9,17 @@ The full details of the technical challenge are documented in the [challenge.md]
 ## Project Structure
 
 ```plaintext
+├── __tests__
+│   ├── gateways
+│   │   └── notification.gateway.test.ts
+│   ├── services
+│   │   └── notification-service.impl.test.ts
+│   └── strategies
+│       ├── implementations
+│       │   ├── marketing-rate-limit.strategy.test.ts
+│       │   ├── news-rate-limit.strategy.test.ts
+│       │   └── status-rate-limit.strategy.test.ts
+│       └── rate-limit.abstract.test.ts
 ├── src
 │   ├── gateways
 │   │   ├── notification.gateway.test.ts
