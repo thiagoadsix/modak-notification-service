@@ -1,7 +1,7 @@
 {
   "name": "notification-service",
   "version": "1.0.0",
-  "description": "A rate-limited notification service to manage email notifications based on user-defined rules.",
+  "description": "A modular notification service implementing rate limiting for different notification types (status updates, news, and marketing)",
   "author": {
     "name": "Thiago Andrade Silva",
     "email": "thiago.adsix@gmail.com",
